@@ -12,14 +12,3 @@ php -S localhost:8000
 ```text
 http://localhost:8000
 ```
-
-## Проверка отдельных работ
-
-Примеры адресов:
-
-```text
-http://localhost:8000/lab01/
-http://localhost:8000/lab02/
-http://localhost:8000/lab04/
-http://localhost:8000/lab07/
-```
