@@ -9,7 +9,7 @@
 <body>
 <div class="page-shell">
     <header class="topbar">
-        <a class="brand" href="<?= BASE_PATH ?>/">🌸 Summer Save Anime</a>
+        <a class="brand" href="<?= BASE_PATH ?>/">💸 Накопления</a>
         <nav class="main-nav">
             <a href="<?= BASE_PATH ?>/">Главная</a>
             <a href="<?= BASE_PATH ?>/months">Месяцы</a>

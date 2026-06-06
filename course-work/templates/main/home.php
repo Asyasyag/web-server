@@ -1,23 +1,25 @@
 <?php include __DIR__ . '/../header.php'; ?>
 <section class="hero panel">
     <div>
-        <p class="badge">Курсовой проект · backend MVC</p>
+        <p class="badge">Курсовой проект</p>
         <h1>Накопления на лето до <?= number_format($goal, 0, '.', ' ') ?> ₽</h1>
-        <p class="lead">Небольшой сайт в анимешном стиле, где цель разбита на три месяца: июнь, июль и август. В каждом разделе есть калькулятор, который показывает, сколько нужно отложить, чтобы к концу лета прийти к сумме <strong><?= number_format($goal, 0, '.', ' ') ?> ₽</strong>.</p>
+        <p class="lead">Большая цель собирается из маленьких шагов. Этот сайт посвящён летним накоплениям: спокойному движению вперёд, аккуратному плану и ощущению, что нужная сумма становится всё ближе с каждым месяцем.</p>
+        <p class="soft-text">Июнь — начать. Июль — не сбиться. Август — красиво дойти до цели. Главное не идеальный старт, а регулярность и понятный ориентир.</p>
         <div class="hero-actions">
-            <a class="btn" href="<?= BASE_PATH ?>/months">Открыть месяцы</a>
+            <a class="btn" href="<?= BASE_PATH ?>/months">Перейти к месяцам</a>
             <a class="btn secondary" href="<?= BASE_PATH ?>/admin">Редактировать разделы</a>
         </div>
     </div>
-    <div class="goal-card">
-        <h2>Что реализовано</h2>
-        <ul>
-            <li>backend-маршрутизация на MVC-шаблоне;</li>
-            <li>динамические страницы по месяцам;</li>
-            <li>калькулятор накоплений с расчётом по параметрам;</li>
-            <li>раздел администрирования с CRUD;</li>
-            <li>хранение данных в JSON-модели.</li>
-        </ul>
+    <div class="hero-visual">
+        <div class="quote-card">
+            <h2>Немного мотивации</h2>
+            <ul>
+                <li>✨ Даже небольшая сумма — это уже движение к цели.</li>
+                <li>💗 Регулярность важнее идеального начала.</li>
+                <li>💸 Каждый месяц приближает к <?= number_format($goal, 0, '.', ' ') ?> ₽.</li>
+            </ul>
+        </div>
+        <img src="<?= BASE_PATH ?>/images/anime-girl-savings.png" alt="Аниме-иллюстрация девушки с копилкой" class="hero-image subtle">
     </div>
 </section>
 
@@ -33,7 +35,7 @@
             <h3><?= htmlspecialchars($month->getName()) ?></h3>
             <p class="muted"><?= htmlspecialchars($month->getSubtitle()) ?></p>
             <p><?= htmlspecialchars($month->getTip()) ?></p>
-            <span class="link-line">Открыть калькулятор →</span>
+            <span class="link-line">Открыть раздел →</span>
         </a>
     <?php endforeach; ?>
 </div>
