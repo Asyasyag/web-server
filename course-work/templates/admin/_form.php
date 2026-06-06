@@ -1,33 +1,33 @@
 <?php
-$r = $recipe ?? null;
-$value = function (string $method, string $default = '') use ($r): string {
-    return $r === null ? $default : htmlspecialchars((string)$r->$method());
+$m = $month ?? null;
+$val = function (string $method, $default = '') use ($m) {
+    return $m === null ? $default : htmlspecialchars((string)$m->$method());
 };
 ?>
-<form method="post" class="form-card">
-    <label>Название
-        <input type="text" name="name" value="<?= $value('getName') ?>" required>
+<form method="post" class="panel form-card">
+    <label>
+        Название месяца
+        <input type="text" name="name" value="<?= $val('getName') ?>" required>
     </label>
-
-    <label>Ингредиенты, каждый с новой строки
-        <textarea name="ingredients" rows="5" required><?= $value('getIngredients') ?></textarea>
+    <label>
+        Подзаголовок
+        <input type="text" name="subtitle" value="<?= $val('getSubtitle') ?>" required>
     </label>
-
-    <label>Приготовление
-        <textarea name="text" rows="8" required><?= $value('getText') ?></textarea>
+    <label>
+        Описание
+        <textarea name="description" rows="6" required><?= $val('getDescription') ?></textarea>
     </label>
-
-    <div class="form-row">
-        <label>Порций
-            <input type="number" name="servings" min="1" value="<?= $value('getServings', '1') ?>" required>
-        </label>
-        <label>Ккал/порц.
-            <input type="number" name="calories_per_serving" min="0" value="<?= $value('getCaloriesPerServing', '0') ?>" required>
-        </label>
-        <label>Время, мин
-            <input type="number" name="cook_time" min="0" value="<?= $value('getCookTime', '0') ?>" required>
-        </label>
-    </div>
-
-    <button type="submit">Сохранить</button>
+    <label>
+        Совет по накоплению
+        <textarea name="tip" rows="4" required><?= $val('getTip') ?></textarea>
+    </label>
+    <label>
+        Сколько месяцев остаётся до цели
+        <input type="number" min="1" name="months_left" value="<?= $val('getMonthsLeft', '1') ?>" required>
+    </label>
+    <label>
+        Эмодзи / символ
+        <input type="text" name="emoji" value="<?= $val('getEmoji', '✨') ?>" required>
+    </label>
+    <button class="btn" type="submit">Сохранить</button>
 </form>

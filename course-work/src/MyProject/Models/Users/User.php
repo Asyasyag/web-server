@@ -6,15 +6,11 @@ use MyProject\Models\ActiveRecordEntity;
 class User extends ActiveRecordEntity
 {
     private string $nickname;
-    private string $email;
-    private string $role;
 
-    public function __construct(string $nickname = 'siddikova', string $email = 'siddikova@example.local', string $role = 'admin')
+    public function __construct(string $nickname = 'Сиддикова А. М.')
     {
         $this->id = 1;
         $this->nickname = $nickname;
-        $this->email = $email;
-        $this->role = $role;
     }
 
     public static function getById(int $id): self

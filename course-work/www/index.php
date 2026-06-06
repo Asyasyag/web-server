@@ -9,7 +9,7 @@ if (PHP_SAPI === 'cli-server') {
 require_once __DIR__ . '/../src/autoload.php';
 
 use MyProject\Controllers\MainController;
-use MyProject\Controllers\RecipeController;
+use MyProject\Controllers\SavingsController;
 
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
 $basePath = rtrim($scriptDir, '/');
@@ -26,12 +26,12 @@ $url = trim($url, '/');
 
 $routes = [
     '~^$~' => [MainController::class, 'home'],
-    '~^recipes$~' => [RecipeController::class, 'index'],
-    '~^recipes/(\d+)$~' => [RecipeController::class, 'show'],
-    '~^admin$~' => [RecipeController::class, 'admin'],
-    '~^admin/add$~' => [RecipeController::class, 'add'],
-    '~^admin/(\d+)/edit$~' => [RecipeController::class, 'edit'],
-    '~^admin/(\d+)/delete$~' => [RecipeController::class, 'delete'],
+    '~^months$~' => [SavingsController::class, 'index'],
+    '~^months/(\d+)$~' => [SavingsController::class, 'show'],
+    '~^admin$~' => [SavingsController::class, 'admin'],
+    '~^admin/add$~' => [SavingsController::class, 'add'],
+    '~^admin/(\d+)/edit$~' => [SavingsController::class, 'edit'],
+    '~^admin/(\d+)/delete$~' => [SavingsController::class, 'delete'],
 ];
 
 foreach ($routes as $pattern => [$controllerClass, $action]) {

@@ -1,7 +1,7 @@
 <?php
 namespace MyProject\Controllers;
 
-use MyProject\Models\Recipes\Recipe;
+use MyProject\Models\Months\MonthPlan;
 use MyProject\View\View;
 
 class MainController
@@ -15,9 +15,12 @@ class MainController
 
     public function home(): void
     {
+        $settings = require __DIR__ . '/../../../src/settings.php';
+
         $this->view->renderHtml('main/home.php', [
-            'recipes' => Recipe::findAll(),
-            'title' => 'Кулинарная книга — курсовая работа',
+            'months' => MonthPlan::findAll(),
+            'title' => 'Аниме-план накоплений на лето',
+            'goal' => $settings['goal'],
         ]);
     }
 }

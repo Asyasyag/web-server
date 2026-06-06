@@ -1,9 +1,10 @@
 <?php
 return [
     'storage' => [
-        'recipes' => __DIR__ . '/../data/recipes.json',
+        'months' => __DIR__ . '/../data/months.json',
     ],
-    'student' => [
+    'goal' => 67000,
+    'author' => [
         'name' => 'Сиддикова А. М.',
         'group' => '251-321',
     ],

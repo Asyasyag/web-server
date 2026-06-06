@@ -1,5 +1,7 @@
 <?php include __DIR__ . '/../header.php'; ?>
-<h1>404 — страница не найдена</h1>
-<p class="notice">Такой страницы или рецепта нет.</p>
-<p><a href="<?= BASE_PATH ?>/recipes">Вернуться к рецептам</a></p>
+<section class="panel narrow">
+    <h1>404 — страница не найдена</h1>
+    <p>Похоже, нужный раздел потерялся по дороге к летней цели.</p>
+    <a class="btn" href="<?= BASE_PATH ?>/">Вернуться на главную</a>
+</section>
 <?php include __DIR__ . '/../footer.php'; ?>

@@ -8,7 +8,7 @@ class Db
     public function __construct()
     {
         $settings = require __DIR__ . '/../../settings.php';
-        $this->filePath = $settings['storage']['recipes'];
+        $this->filePath = $settings['storage']['months'];
     }
 
     public function getAll(): array
